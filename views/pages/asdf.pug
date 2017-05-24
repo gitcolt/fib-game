@@ -1,10 +1,21 @@
 doctype html
 html
-    head
-        script(src='/vue.js')
-        script(src='/jquery-3.2.1.js')
-    body
-        div#a(@click="aaaa")
-            h1 Hello {{ asdf }}
-            p(v-for="item in items") {{ item }} 
-        script(src='/test.js')
+  head
+    script(src='/vue.js')
+    script(src='/jquery-3.2.1.js')
+    script(src='/state-machine.js')
+  body
+    #game
+      h3 round {{ round }}
+      .screen#joining-container(@click="startGame" style="display:none")
+        h1 JOINING SCREEN
+
+      .screen#main-container(@click="cont" style="display:none")
+        h1 MAIN GAME LOOP {{ quest }}
+
+      .screen#results-container(@click="startGame" style="display:none")
+        h1 RESULTS
+
+      h3 {{ debugMsg }}
+
+    script(src='/test.js')
