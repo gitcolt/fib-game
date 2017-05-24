@@ -11,11 +11,11 @@ html
         h1 JOINING SCREEN
 
       .screen#main-container(@click="cont" style="display:none")
-        h1 MAIN GAME LOOP {{ quest }}
+        h1 MAIN GAME LOOP {{ question }}
 
       .screen#results-container(@click="startGame" style="display:none")
         h1 RESULTS
 
       h3 {{ debugMsg }}
 
-    script(src='/test.js')
+    script(src='/game.js')

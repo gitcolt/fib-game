@@ -21,7 +21,7 @@ var vm = new Vue({
     debugMsg: 'This is the debug message',
     round: 0,
     counter: 0,
-    quest: ''
+    question: ''
   },
   methods: {
     startGame: function() {
@@ -58,8 +58,8 @@ var fsm = StateMachine.create({
     },
     onnewQuestion: function(event, from, to) {
       vm.round++;
-      $.getJSON("qwerty", function(question) {
-        vm.quest = question.text;
+      $.getJSON("qwerty", function(res) {
+        vm.question = res.question;
       });
     },
     onshowResults: function(event, from, to) {
