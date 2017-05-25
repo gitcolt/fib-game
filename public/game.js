@@ -22,13 +22,21 @@ var vm = new Vue({
     round: 0,
     counter: 0,
     currQuestion: '',
-    lies: [],
+    answers: [],
     players: [],
-    liesReady: false
+    answersReady: false,
+    revealAnim: 'reveal_anim'
   },
   methods: {
     startGame: function() {
       fsm.startGame();
+    },
+    reveal: function(index) {
+      if (index >= this.answers.length) {
+        //setTimeout transition to results
+      } else {
+        this.answers[index].isRevealing = true;
+      }
     },
     cont: function() {
       cont();
@@ -60,20 +68,29 @@ var fsm = StateMachine.create({
       goToGameScreen("main");
     },
     onenteringLies: function(event, from, to) {
-      vm.liesReady = false;
-      vm.lies = [];
+      vm.answersReady = false;
+      vm.answers = [];
       // TODO defer transition until response has been received
       $.getJSON("question", function(res) {
         vm.currQuestion = res.question;
-        // Don't allow players to use "comp" as a name
-        vm.lies.push({text: res.lie, author: "comp"});
+        // Push computer's true answer
+        vm.answers.push(
+          {text: res.answer,  author: "comp", isCorrect: true,  isRevealing: false});
+        // Push computer's lie
+        vm.answers.push(
+          {text: res.lie,     author: "comp", isCorrect: false, isRevealing: false});
       });
       // simulating players entering lies
-      vm.lies.push({text: "google", author: vm.players[0].name});
-      vm.lies.push({text: "giggle", author: vm.players[1].name});
+      vm.answers.push(
+        {text: "google", author: vm.players[0].name, isCorrect: false, isRevealing: false});
+      vm.answers.push(
+        {text: "giggle", author: vm.players[1].name, isCorrect: false, isRevealing: false});
     },
     onchoose: function(event, from, to) {
-      vm.liesReady = true; 
+      vm.answersReady = true; 
+      // simulating players choosing answers
+      vm.answers[0].chosenBy = vm.players[0].name;
+      vm.answers[1].chosenBy = vm.players[1].name;
     },
     onnewQuestion: function(event, from, to) {
       vm.round++;
@@ -81,9 +98,13 @@ var fsm = StateMachine.create({
     onshowResults: function(event, from, to) {
       goToGameScreen("results");
     },
+    onreveal: function(event, from, to) {
+      vm.answers[0].isRevealing = true;
+    },
     onjoining: function(event, from, to) {
       //replace with real chromecast messages
       // vm.joining = true;
+      // Don't allow players to use "comp" as a name
       simulatedPlayersJoining();
     }
   }

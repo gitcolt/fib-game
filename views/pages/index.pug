@@ -4,6 +4,7 @@ html
     script(src='/vue.js')
     script(src='/jquery-3.2.1.js')
     script(src='/state-machine.js')
+    link(rel='stylesheet' type='text/css' href='/stylesheets/main.css')
   body
     #game
       h3 round {{ round }}
@@ -12,7 +13,7 @@ html
 
       .screen#main-container(@click="cont" style="display:none")
         h1 {{ currQuestion }}
-        h2(v-if="liesReady" v-for="lie in lies") {{ lie.text }}
+        h2(v-if="answersReady" v-for="(ans, index) in answers" v-bind:class="ans.isRevealing ? revealAnim : '' " @animationend="reveal(index + 1)") {{ ans.text }}
 
       .screen#results-container(@click="startGame" style="display:none")
         h1(v-for="player in players") {{ player.name }} {{ player.score }} 
