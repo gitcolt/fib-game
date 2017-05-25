@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    title Fibbing Game
     script(src='/vue.js')
     script(src='/jquery-3.2.1.js')
     script(src='/state-machine.js')
@@ -13,7 +14,12 @@ html
 
       .screen#main-container(@click="cont" style="display:none")
         h1 {{ currQuestion }}
-        h2(v-if="answersReady" v-for="(ans, index) in answers" v-bind:class="ans.isRevealing ? revealAnim : '' " @animationend="reveal(index + 1)") {{ ans.text }}
+        #answers-container(v-if="answersReady")
+          .answer(v-for="(ans, index) in answers" :class="ans.isRevealing ? revealAnim : ''" @animationend="reveal(index + 1)")
+            h2.answer-text {{ ans.text }}
+            .answer-info(v-if="ans.isRevealing && (ans.chosenBy.length > 0)")
+              .answer-author {{ ans.author }}'s lie
+              .answer-chosen-by chosen by {{ ans.chosenBy[0] }}
 
       .screen#results-container(@click="startGame" style="display:none")
         h1(v-for="player in players") {{ player.name }} {{ player.score }} 

@@ -27,6 +27,8 @@ var vm = new Vue({
     answersReady: false,
     revealAnim: 'reveal_anim'
   },
+  computed: {
+  },
   methods: {
     startGame: function() {
       fsm.startGame();
@@ -75,22 +77,22 @@ var fsm = StateMachine.create({
         vm.currQuestion = res.question;
         // Push computer's true answer
         vm.answers.push(
-          {text: res.answer,  author: "comp", isCorrect: true,  isRevealing: false});
+          {text: res.answer,  author: "comp", chosenBy: [], isCorrect: true,  isRevealing: false});
         // Push computer's lie
         vm.answers.push(
-          {text: res.lie,     author: "comp", isCorrect: false, isRevealing: false});
+          {text: res.lie,     author: "comp", chosenBy: [], isCorrect: false, isRevealing: false});
       });
       // simulating players entering lies
       vm.answers.push(
-        {text: "google", author: vm.players[0].name, isCorrect: false, isRevealing: false});
+        {text: "google", author: vm.players[0].name, chosenBy: [], isCorrect: false, isRevealing: false});
       vm.answers.push(
-        {text: "giggle", author: vm.players[1].name, isCorrect: false, isRevealing: false});
+        {text: "giggle", author: vm.players[1].name, chosenBy: [], isCorrect: false, isRevealing: false});
     },
     onchoose: function(event, from, to) {
       vm.answersReady = true; 
       // simulating players choosing answers
-      vm.answers[0].chosenBy = vm.players[0].name;
-      vm.answers[1].chosenBy = vm.players[1].name;
+      vm.answers[1].chosenBy.push(vm.players[0].name);
+      vm.answers[2].chosenBy.push(vm.players[1].name);
     },
     onnewQuestion: function(event, from, to) {
       vm.round++;
