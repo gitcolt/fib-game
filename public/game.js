@@ -21,7 +21,10 @@ var vm = new Vue({
     debugMsg: 'This is the debug message',
     round: 0,
     counter: 0,
-    question: ''
+    currQuestion: '',
+    lies: [],
+    players: [],
+    liesReady: false
   },
   methods: {
     startGame: function() {
@@ -36,12 +39,12 @@ var vm = new Vue({
 var fsm = StateMachine.create({
   initial: "joining",
   events: [
-    { name: "startGame",    from: ["joining", "showing-results"], to: "entering-lies"   },
-    { name: "choose",       from: "entering-lies", to: "choosing-answers"   },
-    { name: "reveal",       from: "choosing-answers", to: "revealing-answer"   },
-    { name: "showResults",  from: "revealing-answer", to: "showing-results"   },
-    { name: "newQuestion",  from: "revealing-answer", to: "entering-lies"   },
-    { name: "join",  from: "showing-results", to: "joining"   }
+    { name: "startGame",    from: ["joining", "showingResults"],  to: "enteringLies"    },
+    { name: "choose",       from: "enteringLies",                 to: "choosingAnswers" },
+    { name: "reveal",       from: "choosingAnswers",              to: "revealingAnswer" },
+    { name: "showResults",  from: "revealingAnswer",              to: "showingResults"  },
+    { name: "newQuestion",  from: "revealingAnswer",              to: "enteringLies"    },
+    { name: "join",         from: "showingResults",               to: "joining"         }
   ],
   callbacks: {
     // Called on EVERY state
@@ -56,17 +59,40 @@ var fsm = StateMachine.create({
       vm.round = 0;
       goToGameScreen("main");
     },
+    onenteringLies: function(event, from, to) {
+      vm.liesReady = false;
+      vm.lies = [];
+      // TODO defer transition until response has been received
+      $.getJSON("question", function(res) {
+        vm.currQuestion = res.question;
+        // Don't allow players to use "comp" as a name
+        vm.lies.push({text: res.lie, author: "comp"});
+      });
+      // simulating players entering lies
+      vm.lies.push({text: "google", author: vm.players[0].name});
+      vm.lies.push({text: "giggle", author: vm.players[1].name});
+    },
+    onchoose: function(event, from, to) {
+      vm.liesReady = true; 
+    },
     onnewQuestion: function(event, from, to) {
       vm.round++;
-      $.getJSON("qwerty", function(res) {
-        vm.question = res.question;
-      });
     },
     onshowResults: function(event, from, to) {
       goToGameScreen("results");
+    },
+    onjoining: function(event, from, to) {
+      //replace with real chromecast messages
+      // vm.joining = true;
+      simulatedPlayersJoining();
     }
   }
 });
+
+function simulatedPlayersJoining() {
+  vm.players.push({name: "Colt", score: 0});
+  vm.players.push({name: "Kim", score: 0});
+}
 
 function cont() {
   switch(vm.counter) {

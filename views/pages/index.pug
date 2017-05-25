@@ -8,13 +8,14 @@ html
     #game
       h3 round {{ round }}
       .screen#joining-container(@click="startGame" style="display:none")
-        h1 JOINING SCREEN
+        h1(v-for="player in players") {{ player.name }}
 
       .screen#main-container(@click="cont" style="display:none")
-        h1 MAIN GAME LOOP {{ question }}
+        h1 {{ currQuestion }}
+        h2(v-if="liesReady" v-for="lie in lies") {{ lie.text }}
 
       .screen#results-container(@click="startGame" style="display:none")
-        h1 RESULTS
+        h1(v-for="player in players") {{ player.name }} {{ player.score }} 
 
       h3 {{ debugMsg }}
 
