@@ -2,6 +2,21 @@ body {
   background-color: lightblue;
 }
 
+.score {
+  font-size: 3em;  
+  list-style: none;
+}
+
+.answer {
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.correct-answer {
+  color: green;
+}
+
 #player {
   float: left; 
   margin-left: 20px;
@@ -45,7 +60,7 @@ body {
 }
 
 .reveal_anim {
-  animation: reveal 3s linear forwards;
+  animation: reveal .3s linear forwards;
 }
 
 @keyframes reveal {

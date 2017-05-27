@@ -15,7 +15,7 @@ function goToGameScreen(screen) {
   }
 }
 
-var scores = Vue.component('scores-slideout', {
+Vue.component('scores-slideout', {
   template: '#scores-slideout',
   props: ['players', 'is-showing-scores']
 });
@@ -39,7 +39,7 @@ var vm = new Vue({
     },
     reveal: function(index) {
       if (index >= this.answers.length) {
-        //setTimeout transition to schore update
+        //setTimeout transition to score update
         
       } else {
         this.answers[index].isRevealing = true;
@@ -54,28 +54,33 @@ var vm = new Vue({
 var fsm = StateMachine.create({
   initial: "joining",
   events: [
-    { name: "startGame",    from: ["joining", "showingResults"],  to: "enteringLies"    },
-    { name: "choose",       from: "enteringLies",                 to: "choosingAnswers" },
+    { name: "startGame",    from: ["joining", "showingResults"],  to: "submittingLies"    },
+    { name: "choose",       from: "submittingLies",               to: "choosingAnswers" },
     { name: "reveal",       from: "choosingAnswers",              to: "revealingAnswer" },
     { name: "updateScores", from: "revealingAnswer",              to: "updatingScores"  },
     { name: "showResults",  from: "updatingScores",               to: "showingResults"  },
-    { name: "newQuestion",  from: "updatingScores",               to: "enteringLies"    },
+    { name: "newQuestion",  from: "updatingScores",               to: "submittingLies"    },
     { name: "join",         from: "showingResults",               to: "joining"         }
   ],
   callbacks: {
     // Called on EVERY state
-    onenterstate: function(event, from, to) {
+    onenterstate: function() {
       vm.debugMsg = this.current;
     },
-    // Initialization
-    onstartup: function(event, from, to) {
+
+    // ON STARTUP (initialization)
+    onstartup: function() {
       goToGameScreen("join");
     },
-    onstartGame: function(event, from, to) {
+
+    // ON STAR GAME
+    onstartGame: function() {
       vm.round = 0;
       goToGameScreen("main");
     },
-    onenteringLies: function(event, from, to) {
+
+    // ON SUBMITTING LIES
+    onsubmittingLies: function() {
       vm.answersReady = false;
       vm.answers = [];
       // TODO defer transition until response has been received
@@ -94,30 +99,68 @@ var fsm = StateMachine.create({
       vm.answers.push(
         {text: "giggle", author: vm.players[1].name, chosenBy: [], isCorrect: false, isRevealing: false});
     },
-    onchoose: function(event, from, to) {
+
+    // ON CHOOSE
+    onchoose: function() {
       vm.answersReady = true; 
       // simulating players choosing answers
       vm.answers[1].chosenBy.push(vm.players[0].name);
       vm.answers[2].chosenBy.push(vm.players[1].name);
     },
-    onnewQuestion: function(event, from, to) {
+
+    // ON NEW QUESTION
+    onnewQuestion: function() {
       vm.isShowingScores = false;
       vm.round++;
     },
-    onshowResults: function(event, from, to) {
+
+    // ON SHOW RESULTS
+    onshowResults: function() {
       goToGameScreen("results");
     },
-    onreveal: function(event, from, to) {
+
+    // ON REVEAL
+    onreveal: function() {
       vm.answers[0].isRevealing = true;
     },
-    onjoining: function(event, from, to) {
+
+    // ON JOINING
+    onjoining: function() {
       //replace with real chromecast messages
       // vm.joining = true;
       // Don't allow players to use "comp" as a name
       simulatedPlayersJoining();
     },
+
+    // ON UPDATE SCORES
     onupdateScores: function() {
       vm.isShowingScores = true;
+      setTimeout(function() {
+        for (let i = 0; i < vm.answers.length; i++) {
+          var answer = vm.answers[i];
+          if(answer.isCorrect) {
+            for (let i = 0; i < answer.chosenBy.length; i++) {
+              let chosenBy = answer.chosenBy[i];
+              let player = vm.players.filter(function(player) {
+                return player.name == chosenBy;
+              })[0];
+              player.score += 1000;
+            }
+          } else if (!answer.isCorrect) {
+            var author = vm.players.filter(function(player) {
+              return player.name == answer.author;
+            })[0];
+            for (player in answer.chosenBy) {
+              author.score += 500; 
+            }
+          }
+        }
+      }, 1000);
+    },
+
+    // ON LEAVE SHOWING RESULTS
+    onleaveshowingResults: function() {
+      vm.isShowingScores = false;
     }
   }
 });

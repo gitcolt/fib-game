@@ -17,7 +17,8 @@ html
         h1 {{ currQuestion }}
         #answers-container(v-if="answersReady")
           .answer(v-for="(ans, index) in answers" :class="ans.isRevealing ? revealAnim : ''" @animationend="reveal(index + 1)")
-            h2.answer-text {{ ans.text }}
+            h2.answer-text.correct-answer(v-if="ans.isRevealing && ans.isCorrect") {{ ans.text }}
+            h2.answer-text(v-else) {{ ans.text }}
             .answer-info(v-if="ans.isRevealing")
               .answer-author(v-if="ans.isCorrect") The Truth! 
               .answer-author(v-else) {{ ans.author }}'s lie
