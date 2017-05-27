@@ -73,9 +73,13 @@ var fsm = StateMachine.create({
       goToGameScreen("join");
     },
 
-    // ON STAR GAME
+    // ON START GAME
     onstartGame: function() {
       vm.round = 0;
+      for (var i = 0; i < vm.players.length; i++) {
+        var player = vm.players[i];
+        player.score = 0;
+      }
       goToGameScreen("main");
     },
 
@@ -102,6 +106,7 @@ var fsm = StateMachine.create({
 
     // ON CHOOSE
     onchoose: function() {
+      shuffle(vm.answers); 
       vm.answersReady = true; 
       // simulating players choosing answers
       vm.answers[1].chosenBy.push(vm.players[0].name);
@@ -151,10 +156,14 @@ var fsm = StateMachine.create({
               return player.name == answer.author;
             })[0];
             for (player in answer.chosenBy) {
-              author.score += 500; 
+              if (author)
+                author.score += 500; 
             }
           }
         }
+        vm.players.sort(function(a, b) {
+          return b.score - a.score;
+        });
       }, 1000);
     },
 
@@ -168,6 +177,15 @@ var fsm = StateMachine.create({
 function simulatedPlayersJoining() {
   vm.players.push({name: "Colt", score: 0});
   vm.players.push({name: "Kim", score: 0});
+}
+
+function shuffle (array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
 
 function cont() {
