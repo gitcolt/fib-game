@@ -15,6 +15,11 @@ function goToGameScreen(screen) {
   }
 }
 
+var scores = Vue.component('scores-slideout', {
+  template: '#scores-slideout',
+  props: ['players', 'is-showing-scores']
+});
+
 var vm = new Vue({
   el: "#game",
   data: {
@@ -25,9 +30,8 @@ var vm = new Vue({
     answers: [],
     players: [],
     answersReady: false,
-    revealAnim: 'reveal_anim'
-  },
-  computed: {
+    revealAnim: 'reveal_anim',
+    isShowingScores: false
   },
   methods: {
     startGame: function() {
@@ -35,7 +39,8 @@ var vm = new Vue({
     },
     reveal: function(index) {
       if (index >= this.answers.length) {
-        //setTimeout transition to results
+        //setTimeout transition to schore update
+        
       } else {
         this.answers[index].isRevealing = true;
       }
@@ -52,8 +57,9 @@ var fsm = StateMachine.create({
     { name: "startGame",    from: ["joining", "showingResults"],  to: "enteringLies"    },
     { name: "choose",       from: "enteringLies",                 to: "choosingAnswers" },
     { name: "reveal",       from: "choosingAnswers",              to: "revealingAnswer" },
-    { name: "showResults",  from: "revealingAnswer",              to: "showingResults"  },
-    { name: "newQuestion",  from: "revealingAnswer",              to: "enteringLies"    },
+    { name: "updateScores", from: "revealingAnswer",              to: "updatingScores"  },
+    { name: "showResults",  from: "updatingScores",               to: "showingResults"  },
+    { name: "newQuestion",  from: "updatingScores",               to: "enteringLies"    },
     { name: "join",         from: "showingResults",               to: "joining"         }
   ],
   callbacks: {
@@ -95,6 +101,7 @@ var fsm = StateMachine.create({
       vm.answers[2].chosenBy.push(vm.players[1].name);
     },
     onnewQuestion: function(event, from, to) {
+      vm.isShowingScores = false;
       vm.round++;
     },
     onshowResults: function(event, from, to) {
@@ -108,6 +115,9 @@ var fsm = StateMachine.create({
       // vm.joining = true;
       // Don't allow players to use "comp" as a name
       simulatedPlayersJoining();
+    },
+    onupdateScores: function() {
+      vm.isShowingScores = true;
     }
   }
 });
@@ -126,6 +136,9 @@ function cont() {
       fsm.reveal();
       break;
     case 2:
+      fsm.updateScores();
+      break;
+    case 3:
       if (vm.round >=3) {
         fsm.showResults();
       } else {

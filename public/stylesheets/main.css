@@ -2,6 +2,48 @@ body {
   background-color: lightblue;
 }
 
+#player {
+  float: left; 
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#debug {
+  clear: left
+}
+
+.scores-slideout {
+  position: relative;
+  float: right;
+  width: 30vw;
+  height: 100vh;
+  padding 30px;
+  background-color: lightgray;
+  transform: translateX(0);
+}
+
+.slide-enter-active, .slide-leave-active {
+  /* replace with cubic-bezier curve easing (bounce) */
+  transition: all .8s ease;
+}
+
+.slide-enter {
+  transform: translateX(100%);
+}
+
+/* Why doesn't 
+ *
+ * |.slide-leave {
+ * |   transform: translateX(0);
+ * | }
+ *
+ * work? and why does this \/ work?
+ */
+
+.slide-leave-to {
+  transform: translateX(100%);
+}
+
 .reveal_anim {
   animation: reveal 3s linear forwards;
 }

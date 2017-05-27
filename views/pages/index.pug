@@ -8,22 +8,29 @@ html
     link(rel='stylesheet' type='text/css' href='/stylesheets/main.css')
   body
     #game
+      scores-slideout(:players="players" :is-showing-scores="isShowingScores")
       h3 round {{ round }}
       .screen#joining-container(@click="startGame" style="display:none")
-        h1(v-for="player in players") {{ player.name }}
+        h1#player(v-for="player in players") {{ player.name }}
 
       .screen#main-container(@click="cont" style="display:none")
         h1 {{ currQuestion }}
         #answers-container(v-if="answersReady")
           .answer(v-for="(ans, index) in answers" :class="ans.isRevealing ? revealAnim : ''" @animationend="reveal(index + 1)")
             h2.answer-text {{ ans.text }}
-            .answer-info(v-if="ans.isRevealing && (ans.chosenBy.length > 0)")
-              .answer-author {{ ans.author }}'s lie
-              .answer-chosen-by chosen by {{ ans.chosenBy[0] }}
+            .answer-info(v-if="ans.isRevealing")
+              .answer-author(v-if="ans.isCorrect") The Truth! 
+              .answer-author(v-else) {{ ans.author }}'s lie
+              .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy[0] }}
 
       .screen#results-container(@click="startGame" style="display:none")
         h1(v-for="player in players") {{ player.name }} {{ player.score }} 
 
-      h3 {{ debugMsg }}
+      h3#debug {{ debugMsg }}
 
+    script#scores-slideout(type="text/x-template")
+      transition(name="slide")
+        .scores-slideout(v-if="isShowingScores")
+          ul#scores
+            li.score(v-for="player in players") {{ player.name }}: {{ player.score }}
     script(src='/game.js')
