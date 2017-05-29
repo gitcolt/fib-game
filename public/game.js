@@ -52,15 +52,15 @@ var vm = new Vue({
 });
 
 var fsm = StateMachine.create({
-  initial: "joining",
+  initial: "registeringPlayers",
   events: [
-    { name: "startGame",    from: ["joining", "showingResults"],  to: "submittingLies"    },
-    { name: "choose",       from: "submittingLies",               to: "choosingAnswers" },
-    { name: "reveal",       from: "choosingAnswers",              to: "revealingAnswer" },
+    { name: "startGame",    from: ["registeringPlayers", "showingResults"],  to: "acceptingLies"    },
+    { name: "acceptAnswers",       from: "acceptingLies",               to: "acceptingAnswers" },
+    { name: "reveal",       from: "acceptingAnswers",              to: "revealingAnswer" },
     { name: "updateScores", from: "revealingAnswer",              to: "updatingScores"  },
     { name: "showResults",  from: "updatingScores",               to: "showingResults"  },
-    { name: "newQuestion",  from: "updatingScores",               to: "submittingLies"    },
-    { name: "join",         from: "showingResults",               to: "joining"         }
+    { name: "newQuestion",  from: "updatingScores",               to: "acceptingLies"    },
+    { name: "registerPlayers",         from: "showingResults",               to: "registeringPlayers"         }
   ],
   callbacks: {
     // Called on EVERY state
@@ -83,8 +83,8 @@ var fsm = StateMachine.create({
       goToGameScreen("main");
     },
 
-    // ON SUBMITTING LIES
-    onsubmittingLies: function() {
+    // ON ACCEPTING LIES
+    onacceptingLies: function() {
       vm.answersReady = false;
       vm.answers = [];
       // TODO defer transition until response has been received
@@ -104,8 +104,8 @@ var fsm = StateMachine.create({
         {text: "giggle", author: vm.players[1].name, chosenBy: [], isCorrect: false, isRevealing: false});
     },
 
-    // ON CHOOSE
-    onchoose: function() {
+    // ON ACCEPT ANSWERS
+    onacceptAnswers: function() {
       shuffle(vm.answers); 
       vm.answersReady = true; 
       // simulating players choosing answers
@@ -129,10 +129,9 @@ var fsm = StateMachine.create({
       vm.answers[0].isRevealing = true;
     },
 
-    // ON JOINING
-    onjoining: function() {
+    // ON REGISTERING PLAYERS
+    onregisteringPlayers: function() {
       //replace with real chromecast messages
-      // vm.joining = true;
       // Don't allow players to use "comp" as a name
       simulatedPlayersJoining();
     },
@@ -191,7 +190,7 @@ function shuffle (array) {
 function cont() {
   switch(vm.counter) {
     case 0:
-      fsm.choose();
+      fsm.acceptAnswers();
       break;
     case 1:
       fsm.reveal();
