@@ -1,8 +1,0 @@
-{
-  "name": "Start on Heroku: Node.js",
-  "description": "A fibbing game for chromecast",
-  "repository": "https://github.com/gitcolt/fib-game",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
-  "keywords": ["game", "chromecast"],
-  "image": "heroku/nodejs"
-}

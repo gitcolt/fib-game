@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="293e35905be948826a0d1dce82dcb7e6de6e64fd">
+        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9b2370f2247c8a7332a95cb6fa73b258305ecf97\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3250a7aa8b93089a7d5bdeb131636ee754292c7a\classes.dex" />
+    </item>
+
+</items>
