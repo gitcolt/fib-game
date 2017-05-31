@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.webkit.WebView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,10 +27,12 @@ import com.google.android.gms.cast.framework.CastContext;
 import com.google.android.gms.cast.framework.CastSession;
 import com.google.android.gms.cast.framework.SessionManagerListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -53,6 +57,7 @@ public class GameActivity extends AppCompatActivity {
 
     EditText etPlayerName;
     EditText etEnterLie;
+    ListView lvAnswers;
 
     private SessionManagerListener<CastSession> mSessionManagerListener = new SessionManagerListener<CastSession>() {
         @Override
@@ -284,6 +289,7 @@ public class GameActivity extends AppCompatActivity {
         }
         else if (scene == mChoosingAnswerScene) {
             TransitionManager.go(mChoosingAnswerScene);
+            lvAnswers = (ListView) findViewById(R.id.lvAnswers);
         }
     }
 
@@ -293,10 +299,22 @@ public class GameActivity extends AppCompatActivity {
         goToScene(mEnterLiesScene);
     }
 
-    public void showAnswers() {
-        Toast.makeText(this, "SHOWING ANSWERS", Toast.LENGTH_SHORT).show();
+    public void showAnswers(JSONArray JSONAnswers) {
         currentState = State.CHOOSING_ANSWER;
         goToScene(mChoosingAnswerScene);
+
+        String[] answers = new String[JSONAnswers.length()];
+        for (int i = 0; i < JSONAnswers.length(); i++) {
+            try {
+                JSONObject JSONAnswer = new JSONObject(JSONAnswers.get(i).toString());
+                answers[i] = JSONAnswer.getString("text");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.answer, R.id.liAnswer, answers);
+        lvAnswers.setAdapter(adapter);
     }
 
     class FibCastChannel implements Cast.MessageReceivedCallback {
@@ -320,7 +338,7 @@ public class GameActivity extends AppCompatActivity {
                         startGame();
                         break;
                     case "answers ready":
-                        showAnswers();
+                        showAnswers(new JSONArray(msg.getString("answers")));
                         break;
                     default:
                         Toast.makeText(GameActivity.this, "UNKNOWN ACTION RECEIVED", Toast.LENGTH_SHORT).show();

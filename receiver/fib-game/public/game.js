@@ -91,7 +91,7 @@ var fsm = StateMachine.create({
     onacceptAnswers: function() {
       shuffle(vm.answers); 
       vm.answersReady = true; 
-      var answersReadyMessage = {"action": "answers ready"};
+      var answersReadyMessage = {"action": "answers ready", "answers": vm.answers};
       window.messageBus.broadcast(JSON.stringify(answersReadyMessage));
       // simulating players choosing answers
       setTimeout(function() {
