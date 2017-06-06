@@ -37,12 +37,12 @@ var vm = new Vue({
     startGame: function() {
       fsm.startGame();
     },
-    reveal: function(index) {
-      if (index >= this.answers.length) {
-        //setTimeout transition to score update
-        
+    reveal: function(ansPos) {
+      if (ansPos >= this.answers.length) {
+        // Transition to updateScores when all answers have been revealed
+        fsm.updateScores(); 
       } else {
-        this.answers[index].isRevealing = true;
+        this.answers[ansPos].isRevealing = true;
       }
     },
     cont: function() {
@@ -55,14 +55,14 @@ var fsm = StateMachine.create({
   initial: "registeringPlayers",
   events: [
     { name: "startGame",        from: [ "registeringPlayers",
-                                        "showingResults"],    to: "startingGame"      },
+                                        "showingResults"],    to: "startingGame"        },
     { name: "acceptAnswers",    from:   "acceptingLies",      to: "acceptingAnswers"    },
     { name: "reveal",           from:   "acceptingAnswers",   to: "revealingAnswer"     },
     { name: "updateScores",     from:   "revealingAnswer",    to: "updatingScores"      },
     { name: "showResults",      from:   "updatingScores",     to: "showingResults"      },
     { name: "fetchNewQuestion", from: [ "startingGame", 
-                                        "updatingScores"],    to: "fetchingNewQuestion"       },
-    { name: "acceptLies",       from:   "fetchingNewQuestion",to: "acceptingLies" },
+                                        "updatingScores"],    to: "fetchingNewQuestion" },
+    { name: "acceptLies",       from:   "fetchingNewQuestion",to: "acceptingLies"       },
     { name: "registerPlayers",  from:   "showingResults",     to: "registeringPlayers"  }
   ],
   callbacks: {
@@ -91,14 +91,14 @@ var fsm = StateMachine.create({
     onacceptAnswers: function() {
       shuffle(vm.answers); 
       vm.answersReady = true; 
-      var answersReadyMessage = {"action": "answers ready"};
+      var answersReadyMessage = {"action": "answers ready", "answers": vm.answers};
       window.messageBus.broadcast(JSON.stringify(answersReadyMessage));
       // simulating players choosing answers
       setTimeout(function() {
-        vm.answers[1].chosenBy.push(vm.players[0].name);
-        vm.answers[2].chosenBy.push(vm.players[1].name);
+        //vm.answers[1].chosenBy.push(vm.players[0].name);
+        //vm.answers[2].chosenBy.push(vm.players[1].name);
         fsm.reveal();
-      }, 2000);
+      }, 4000); // Wait 4 seconds for players to choose answers
     },
 
     // ON NEW QUESTION
@@ -121,14 +121,16 @@ var fsm = StateMachine.create({
 
     // ON ACCEPT LIES
     onacceptLies: function() {
-      // simulating players entering lies
+      var newQuestionMessage = {"action": "new question", "question": vm.currQuestion};
+      window.messageBus.broadcast(JSON.stringify(newQuestionMessage));
       setTimeout(function() {
-        vm.answers.push(
+        /*vm.answers.push(
           {text: "google", author: vm.players[0].name, chosenBy: [], isCorrect: false, isRevealing: false});
-        vm.answers.push(
+          vm.answers.push(
           {text: "giggle", author: vm.players[1].name, chosenBy: [], isCorrect: false, isRevealing: false});
+        */
         fsm.acceptAnswers();
-      }, 2000);
+      }, 4000); // Wait 4 seconds for all lies to be entered
     },
 
     // ON SHOW RESULTS
@@ -139,16 +141,20 @@ var fsm = StateMachine.create({
     // ON REVEAL
     onreveal: function() {
       vm.answers[0].isRevealing = true;
+      //transitioning after last answer is revealed instead
+      /*
       setTimeout(function() {
         fsm.updateScores();
       }, 4000);
+      */
     },
 
     // ON REGISTERING PLAYERS
     onregisteringPlayers: function() {
       //replace with real chromecast messages
       // Don't allow players to use "comp" as a name
-      simulatedPlayersJoining();
+
+      //simulatedPlayersJoining();
     },
 
     // ON UPDATE SCORES
@@ -157,28 +163,30 @@ var fsm = StateMachine.create({
       setTimeout(function() {
         for (let i = 0; i < vm.answers.length; i++) {
           var answer = vm.answers[i];
+          // Award 1000 points to each player who chose the correct answer
           if(answer.isCorrect) {
-            for (let i = 0; i < answer.chosenBy.length; i++) {
-              let chosenBy = answer.chosenBy[i];
-              let player = vm.players.filter(function(player) {
-                return player.name == chosenBy;
-              })[0];
-              player.score += 1000;
+            var choosers = getChoosersOf(answer);
+            for (let i = 0; i < choosers.length; i++) {
+              choosers[i].score += 1000;
+              // Notify sender of correct answer chosen
+              var correctAnswerMessage = {"action": "correct answer"}; 
+              window.messageBus.send(choosers[i].id, JSON.stringify(correctAnswerMessage));
             }
-          } else if (!answer.isCorrect) {
-            var author = vm.players.filter(function(player) {
-              return player.name == answer.author;
-            })[0];
-            for (player in answer.chosenBy) {
-              if (author)
-                author.score += 500; 
+            // Award 500 points to each player the author successfully fooled
+          } else if (!answer.isCorrect && answer.author != "comp") {
+            var author = getAuthorOf(answer);
+            for (let i = 0; i < answer.chosenBy.length; i++) {
+              author.score += 500;
+              // 
             }
           }
         }
+        // Rearrange players in descending score order
+        // This will be reflected in the score display
         vm.players.sort(function(a, b) {
           return b.score - a.score;
         });
-      }, 1000);
+      }, 1000); // Wait 1 second after showing the score slider to update the scores
 
       setTimeout(function() {
         if (vm.round >= 3) {
@@ -187,7 +195,7 @@ var fsm = StateMachine.create({
           vm.round++;
           fsm.fetchNewQuestion();
         }
-      }, 3000);
+      }, 3000); // Wait 3 seconds after showing the score slider to either fetch new question or show final results
     },
 
     // ON LEAVE SHOWING RESULTS
@@ -196,6 +204,27 @@ var fsm = StateMachine.create({
     }
   }
 });
+
+// Returns the player who authored the lie
+function getAuthorOf (answer) {
+  let author = vm.players.filter(function(player) {
+    return player.name == answer.author;
+  })[0];
+  return author;
+}
+
+// Returns array of players who chose the provided answer
+function getChoosersOf (answer) {
+  var choosers = [];
+  for (let i = 0; i < answer.chosenBy.length; i++) {
+    let nameOfChooser = answer.chosenBy[i];
+    let player = vm.players.filter(function(player) {
+      return player.name == nameOfChooser;
+    })[0];
+    choosers.push(player);
+  }
+  return choosers;
+}
 
 function simulatedPlayersJoining() {
   vm.players.push({name: "Colt", score: 0});
@@ -214,7 +243,7 @@ function shuffle (array) {
 function cont() {
   switch(vm.counter) {
     case 0:
-      fsm.acceptAnswers();
+      fsm.startGame();
       break;
     case 1:
       fsm.reveal();

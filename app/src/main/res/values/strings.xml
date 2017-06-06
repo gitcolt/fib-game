@@ -3,4 +3,6 @@
     <string name="cast_app_id" translatable="false">02628655</string>
     <string name="cast_namespace" translatable="false">urn:x-cast:com.colten.fibgame</string>
     <string name="media_route_menu_title">Cast to&#8230;</string>
+    <string name="press_play_prompt">Press play when all players have joined</string>
+    <string name="enter_lie_hint">Enter a lie...</string>
 </resources>
