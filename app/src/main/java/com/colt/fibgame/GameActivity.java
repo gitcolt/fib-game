@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +19,13 @@ import com.google.android.gms.cast.framework.CastContext;
 import com.google.android.gms.cast.framework.CastSession;
 import com.google.android.gms.cast.framework.SessionManagerListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameActivity extends FragmentActivity {
 
@@ -78,6 +82,21 @@ public class GameActivity extends FragmentActivity {
             e.printStackTrace();
         }
         sendMessage(data.toString());
+        goToFragment(new LieSubmittedFragment(), null);
+    }
+
+    public void onAnswerClicked(View v) {
+        Toast.makeText(this, "YOU CHOSE AN ANSWER", Toast.LENGTH_SHORT).show();
+        int clickedId = v.getId();
+        LinearLayout answersContainer = (LinearLayout) findViewById(R.id.ll_answers_container);
+        for(int i = 0; i < answersContainer.getChildCount(); ++i) {
+            View answer = answersContainer.getChildAt(i);
+            if (answer.getId() != clickedId) {
+                answer.setVisibility(View.GONE);
+                answersContainer.removeView(answer);
+            }
+        }
+        answersContainer.invalidate();
     }
 
     private SessionManagerListener<CastSession> sessionManagerListener =
@@ -229,6 +248,15 @@ public class GameActivity extends FragmentActivity {
                         tvCurrQuestion.setText(data.getString("question"));
                         break;
                     case "answers ready":
+                        JSONArray jAnswers = data.getJSONArray("answers");
+                        List<String> lAnswers = new ArrayList<String>();
+                        for (int i = 0; i < jAnswers.length(); i++) {
+                            lAnswers.add(jAnswers.getJSONObject(i).getString("text"));
+                        }
+                        String[] answers = lAnswers.toArray(new String[0]);
+                        Bundle args = new Bundle();
+                        args.putStringArray("answers", answers);
+                        goToFragment(new ChooseAnswerFragment(), args);
                         break;
                     default:
                         break;

@@ -5,4 +5,5 @@
     <string name="media_route_menu_title">Cast to&#8230;</string>
     <string name="press_play_prompt">Press play when all players have joined</string>
     <string name="enter_lie_hint">Enter a lie...</string>
+    <string name="lie_submitted">Waiting for other players...</string>
 </resources>
