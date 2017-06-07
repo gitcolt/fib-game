@@ -52,6 +52,9 @@ window.messageBus.onMessage = function(event) {
       vm.answers.push(
         {text: data.lie, author: data.playerName, chosenBy: [], isCorrect: false, isRevealing: false}); 
       break;
+    case "choose answer":
+      vm.answers[data.answerPos].chosenBy.push(data.chooser);
+      break;
     default:
       console.log("Unknown action: " + data.action);
   }

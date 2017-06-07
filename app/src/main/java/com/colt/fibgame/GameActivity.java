@@ -5,8 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.transition.TransitionManager;
+import android.transition.Visibility;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -86,17 +89,31 @@ public class GameActivity extends FragmentActivity {
     }
 
     public void onAnswerClicked(View v) {
-        Toast.makeText(this, "YOU CHOSE AN ANSWER", Toast.LENGTH_SHORT).show();
-        int clickedId = v.getId();
-        LinearLayout answersContainer = (LinearLayout) findViewById(R.id.ll_answers_container);
-        for(int i = 0; i < answersContainer.getChildCount(); ++i) {
-            View answer = answersContainer.getChildAt(i);
-            if (answer.getId() != clickedId) {
+        ViewGroup answerGroup = (ViewGroup) v.getParent();
+        int answerPos = -1;
+        // Animate chosen answer
+        // Default transition is to fade out views that are removed and then
+        // translate the chosen view
+        TransitionManager.beginDelayedTransition(answerGroup);
+
+        for (int i = 0; i < answerGroup.getChildCount(); i++) {
+            View answer = answerGroup.getChildAt(i);
+            if (answer.getId() != v.getId()) {
                 answer.setVisibility(View.GONE);
-                answersContainer.removeView(answer);
+            } else {
+                answerPos = i;
             }
         }
-        answersContainer.invalidate();
+
+        JSONObject data = new JSONObject();
+        try {
+            data.put("action", "choose answer");
+            data.put("answerPos", answerPos);
+            data.put("chooser", playerName);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        sendMessage(data.toString());
     }
 
     private SessionManagerListener<CastSession> sessionManagerListener =
@@ -288,11 +305,10 @@ public class GameActivity extends FragmentActivity {
 
         WelcomeFragment welcomeFragment = new WelcomeFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, welcomeFragment).commit();
+        //delete these
+        //ChooseAnswerFragment chooseAnswerFragment = new ChooseAnswerFragment();
+        //getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, chooseAnswerFragment).commit();
 
         castContext = CastContext.getSharedInstance(this);
-    }
-
-    public void onButtonClicked(View v) {
-
     }
 }

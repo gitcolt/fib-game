@@ -35,6 +35,7 @@ public class ChooseAnswerFragment extends Fragment {
         for (int i = 0; i < answers.length; i++) {
             Button bAnswer = (Button) View.inflate(getContext(), R.layout.answer_template, null);
             bAnswer.setText(answers[i]);
+            bAnswer.setId(View.generateViewId());
             ll.addView(bAnswer);
         }
 
