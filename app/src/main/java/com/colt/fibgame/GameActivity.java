@@ -113,6 +113,7 @@ public class GameActivity extends FragmentActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         sendMessage(data.toString());
     }
 
@@ -257,12 +258,10 @@ public class GameActivity extends FragmentActivity {
             try {
                 JSONObject data = new JSONObject(message);
                 switch (data.getString("action")) {
-                    case "start game":
-                        goToFragment(new EnterLieFragment(), null);
-                        break;
                     case "new question":
-                        tvCurrQuestion = (TextView) findViewById(R.id.tvCurrQuestion);
-                        tvCurrQuestion.setText(data.getString("question"));
+                        Bundle questionArg = new Bundle();
+                        questionArg.putString("question", data.getString("question"));
+                        goToFragment(new EnterLieFragment(), questionArg);
                         break;
                     case "answers ready":
                         JSONArray jAnswers = data.getJSONArray("answers");
@@ -271,9 +270,9 @@ public class GameActivity extends FragmentActivity {
                             lAnswers.add(jAnswers.getJSONObject(i).getString("text"));
                         }
                         String[] answers = lAnswers.toArray(new String[0]);
-                        Bundle args = new Bundle();
-                        args.putStringArray("answers", answers);
-                        goToFragment(new ChooseAnswerFragment(), args);
+                        Bundle ansArg = new Bundle();
+                        ansArg.putStringArray("answers", answers);
+                        goToFragment(new ChooseAnswerFragment(), ansArg);
                         break;
                     default:
                         break;
