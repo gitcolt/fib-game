@@ -5,6 +5,49 @@ body {
 .score {
   font-size: 3em;  
   list-style: none;
+  padding-left: 30px;
+}
+
+.score:first-child {
+  border-radius: 40px 0px 0px;
+  border-style: solid none none solid;
+  border-width: 7px;
+  border-color: white;
+}
+
+.score:last-child {
+  border-radius: 0px 0px 0px 40px;
+  border-style: none none solid solid;
+  border-color: white;
+  border-width: 7px;
+}
+
+.score:nth-child(1) {
+  background: #ff6f69;
+}
+
+.score:nth-child(2) {
+  background: #588c7e;
+  border-left: solid 7px;
+  border-color: white;
+}
+
+.score:nth-child(3) {
+  background: #ffcc5c;
+  border-left: solid 7px;
+  border-color: white;
+}
+
+.score:nth-child(4) {
+  background: #82b74b;
+  border-left: solid 7px;
+  border-color: white;
+}
+
+.score:nth-child(5) {
+  background: #ffeead;
+  border-left: solid 7px;
+  border-color: white;
 }
 
 .answer {
@@ -33,7 +76,6 @@ body {
   width: 30vw;
   height: 100vh;
   padding 30px;
-  background-color: lightgray;
   transform: translateX(0);
 }
 

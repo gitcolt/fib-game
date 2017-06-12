@@ -135,6 +135,8 @@ var fsm = StateMachine.create({
 
     // ON SHOW RESULTS
     onshowResults: function() {
+      var showResultsMessage = {"action": "show results"}
+      window.messageBus.broadcast(JSON.stringify(showResultsMessage));
       goToGameScreen("results");
     },
 

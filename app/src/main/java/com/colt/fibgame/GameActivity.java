@@ -274,6 +274,9 @@ public class GameActivity extends FragmentActivity {
                         ansArg.putStringArray("answers", answers);
                         goToFragment(new ChooseAnswerFragment(), ansArg);
                         break;
+                    case "show results":
+                        goToFragment(new ResultsFragment(), null);
+                        break;
                     default:
                         break;
                 }
@@ -304,9 +307,6 @@ public class GameActivity extends FragmentActivity {
 
         WelcomeFragment welcomeFragment = new WelcomeFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, welcomeFragment).commit();
-        //delete these
-        //ChooseAnswerFragment chooseAnswerFragment = new ChooseAnswerFragment();
-        //getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, chooseAnswerFragment).commit();
 
         castContext = CastContext.getSharedInstance(this);
     }
