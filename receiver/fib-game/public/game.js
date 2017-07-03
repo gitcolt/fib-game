@@ -76,6 +76,12 @@ var fsm = StateMachine.create({
 
     // ON STARTUP (initialization)
     onstartup: function() {
+      //vm.isShowingScores = false;
+      goToGameScreen("join");
+    },
+
+    onregisterPlayers: function() {
+      vm.players = [];
       goToGameScreen("join");
     },
 

@@ -11,12 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="652629cb-93ff-4776-8c80-d80dbe253c91" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pepe.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/repeating_stars.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/my_background.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/test_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/test_bg2.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -25,6 +19,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pepe.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/pepe.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/repeating_stars.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/repeating_stars.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
@@ -110,6 +106,35 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-10-16-28-19-175.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-10-16-28-19-175.rawproto" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-10-16-28-25-890.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-10-16-28-25-890.rawproto" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-10-16-28-35-865.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-10-16-28-35-865.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-52-11-668.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-52-11-668.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-52-47-016.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-52-47-016.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-53-23-673.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-53-23-673.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-57-55-163.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-12-22-57-55-163.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-00-12-08-467.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-00-12-08-467.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-00-32-44-106.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-00-32-44-106.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-11-43-815.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-11-43-815.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-12-17-939.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-12-17-939.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-25-31-368.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-25-31-368.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-27-33-944.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-27-33-944.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-28-01-601.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-15-28-01-601.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-16-15-24-058.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-16-15-24-058.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-16-19-02-267.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-16-19-02-267.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-16-24-40-478.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-16-24-40-478.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-17-16-04-089.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-13-17-16-04-089.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-13-37-35-619.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-13-37-35-619.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-13-37-41-179.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-13-37-41-179.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-13-37-50-700.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-13-37-50-700.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-15-47-09-276.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-24-15-47-09-276.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-28-20-18-14-930.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-28-20-18-14-930.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-28-20-18-21-305.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-06-28-20-18-21-305.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-16-32-19-879.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-16-32-19-879.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-16-32-25-618.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-16-32-25-618.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-01-54-642.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-01-54-642.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-05-15-576.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-05-15-576.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-05-42-168.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-05-42-168.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-07-44-469.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-02-17-07-44-469.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-03-14-48-33-813.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-03-14-48-33-813.rawproto" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-07-03-14-52-27-556.rawproto" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-07-03-14-52-27-556.rawproto" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/node_modules/acorn-globals/node_modules/acorn/dist/.keep" afterPath="$PROJECT_DIR$/receiver/fib-game/node_modules/acorn-globals/node_modules/acorn/dist/.keep" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/node_modules/acorn/dist/.keep" afterPath="$PROJECT_DIR$/receiver/fib-game/node_modules/acorn/dist/.keep" />
@@ -188,6 +213,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/RegisterPlayerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/RegisterPlayerFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ResultsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ResultsFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/background.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/answer_template.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/answer_template.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml" />
@@ -3211,7 +3237,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" afterPath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <ignored path="FibCast.iws" />
@@ -3272,8 +3297,8 @@
       <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+            <state relative-caret-position="306">
+              <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -6289,17 +6314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/register_player_fragment.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -6322,10 +6336,21 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        <state relative-caret-position="306">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

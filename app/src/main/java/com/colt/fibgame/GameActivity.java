@@ -47,7 +47,7 @@ public class GameActivity extends FragmentActivity {
     public void onPlayAgainButtonClicked(View v) {
         JSONObject data = new JSONObject();
         try {
-            data.put("action", "register players");
+            data.put("action", "new game");
         } catch (JSONException e) {
             e.printStackTrace();
         }

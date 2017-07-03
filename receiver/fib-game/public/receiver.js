@@ -55,6 +55,9 @@ window.messageBus.onMessage = function(event) {
     case "choose answer":
       vm.answers[data.answerPos].chosenBy.push(data.chooser);
       break;
+    case "new game":
+      fsm.registerPlayers();
+      break;
     default:
       console.log("Unknown action: " + data.action);
   }
