@@ -7,20 +7,21 @@ html
     script(src='/state-machine.js')
     script(src='//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js')
     link(rel='stylesheet' type='text/css' href='/stylesheets/main.css')
+    link(href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet")
   body
     #game
       scores-slideout(:players="players" :is-showing-scores="isShowingScores")
-      h3 round {{ round }}
+      //h3 round {{ round }}
       .screen#joining-container(@click="startGame" style="display:none")
         h1#player(v-for="player in players") {{ player.name }}
 
       .screen#main-container(@click="cont" style="display:none")
-        h1 {{ currQuestion }}
+        h1#question {{ currQuestion }}
         #answers-container(v-if="answersReady")
           .answer(v-for="(ans, index) in answers" :class="ans.isRevealing ? revealAnim : ''" @animationend="reveal(index + 1)")
-            h2.answer-text.correct-answer(v-if="ans.isRevealing && ans.isCorrect") {{ ans.text }}
-            h2.answer-text(v-else) {{ ans.text }}
-            .answer-info(v-if="ans.isRevealing")
+            .answer-text.correct-answer(v-if="ans.isShowingInfo && ans.isCorrect") {{ ans.text }}
+            .answer-text(v-else) {{ ans.text }}
+            .answer-info(v-if="ans.isShowingInfo")
               .answer-author(v-if="ans.isCorrect") The Truth! 
               .answer-author(v-else) {{ ans.author }}'s lie
               .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy[0] }}
@@ -28,7 +29,7 @@ html
       .screen#results-container(@click="startGame" style="display:none")
         h1(v-for="player in players") {{ player.name }} {{ player.score }} 
 
-      h3#debug {{ debugMsg }}
+      //h3#debug {{ debugMsg }}
 
     script#scores-slideout(type="text/x-template")
       transition(name="slide")

@@ -30,14 +30,17 @@ var vm = new Vue({
     answers: [],
     players: [],
     answersReady: false,
-    revealAnim: 'reveal_anim',
+    revealAnim: 'shake',
     isShowingScores: false
   },
   methods: {
     startGame: function() {
       fsm.startGame();
     },
+    // Warning: hacky function
     reveal: function(ansPos) {
+      // Show the answer info (lie/truth, author, chosen by) of the answer that has finished shaking
+      this.answers[ansPos - 1].isShowingInfo = true;
       if (ansPos >= this.answers.length) {
         // Transition to updateScores when all answers have been revealed
         fsm.updateScores(); 
@@ -110,10 +113,10 @@ var fsm = StateMachine.create({
         vm.currQuestion = res.question;
         // Push computer's true answer
         vm.answers.push(
-          {text: res.answer,  author: "comp", chosenBy: [], isCorrect: true,  isRevealing: false});
+          {text: res.answer,  author: "comp", chosenBy: [], isCorrect: true,  isRevealing: false, isShowingInfo: false});
         // Push computer's lie
         vm.answers.push(
-          {text: res.lie,     author: "comp", chosenBy: [], isCorrect: false, isRevealing: false});
+          {text: res.lie,     author: "comp", chosenBy: [], isCorrect: false, isRevealing: false, isShowingInfo: false});
 
         fsm.acceptLies();
       });
@@ -197,7 +200,7 @@ var fsm = StateMachine.create({
           vm.round++;
           fsm.fetchNewQuestion();
         }
-      }, 3000); // Wait 3 seconds after showing the score slider to either fetch new question or show final results
+      }, 5000); // Wait 5 seconds after showing the score slider to either fetch new question or show final results
     },
 
     // ON LEAVE SHOWING RESULTS
@@ -231,6 +234,11 @@ function getChoosersOf (answer) {
 function simulatedPlayersJoining() {
   vm.players.push({name: "Colt", score: 0});
   vm.players.push({name: "Kim", score: 0});
+}
+
+function simulatedPlayGame() {
+  simulatedPlayersJoining();
+  fsm.startGame();
 }
 
 function shuffle (array) {

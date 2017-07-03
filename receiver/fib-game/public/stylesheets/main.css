@@ -1,5 +1,22 @@
 body {
-  background-color: lightblue;
+  //background-color: lightblue;
+  background-color: #b24542;
+}
+
+#question {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 0 100px 0 100px;
+  font-size: 4em;
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 100;
+  color: #FFDC00;
 }
 
 .score {
@@ -23,7 +40,7 @@ body {
 }
 
 .score:nth-child(1) {
-  background: #ff6f69;
+  background: #ff8c0f;
 }
 
 .score:nth-child(2) {
@@ -39,25 +56,67 @@ body {
 }
 
 .score:nth-child(4) {
-  background: #82b74b;
+  background: #64962f;
   border-left: solid 7px;
   border-color: white;
 }
 
 .score:nth-child(5) {
-  background: #ffeead;
+  background: #adfeff;
   border-left: solid 7px;
   border-color: white;
 }
 
+#answers-container {
+  display: inline-flex;
+  position: absolute;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  top: 30%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //width: 800px;
+  //align-items: center;
+}
+
 .answer {
-  float: left;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 50px;
+  font-size: 2em;
+  padding: 12px;
+  background: #034f84;
+  border: solid white;
+  border-radius: 10px;
+  color: white;
+  font-family: Tahoma, Verdana, Sagoe, sans-serif;
+  //line-height: 70%;
+  //position: relative;
 }
 
 .correct-answer {
   color: green;
+}
+
+.answer-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+  padding: 5px;
+  //background: #f4a742;
+  //margin: 30px;
+}
+
+.answer-author {
+  background: #64962f;
+}
+
+.answer-chosen-by {
+  background: #775849;
 }
 
 #player {
@@ -73,10 +132,11 @@ body {
 .scores-slideout {
   position: relative;
   float: right;
-  width: 30vw;
+  width: 45vw;
   height: 100vh;
   padding 30px;
   transform: translateX(0);
+  z-index: 999;
 }
 
 .slide-enter-active, .slide-leave-active {
@@ -101,21 +161,70 @@ body {
   transform: translateX(100%);
 }
 
-.reveal_anim {
-  animation: reveal .3s linear forwards;
+.shake {
+  animation: shake_anim 3s linear forwards;
 }
 
-@keyframes reveal {
-  0% {
-    font-size: 1.5em;
+@keyframes shake_anim {
+  5% {
+    transform: rotate(-5deg);
   }
-  33% {
-    font-size: 5em;
+  10% {
+    transform: rotate(5deg);
   }
-  66% {
-    font-size: 5em;
+  15% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  35% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  45% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  55% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  65% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+  85% {
+    transform: rotate(-5deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  95% {
+    transform: rotate(-5deg);
   }
   100% {
-    font-size: 1.5em;
+    transform: rotate(0deg);
+    transform: scale(1.2);
   }
 }

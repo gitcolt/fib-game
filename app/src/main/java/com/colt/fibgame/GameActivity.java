@@ -44,6 +44,17 @@ public class GameActivity extends FragmentActivity {
 
     private static final String TAG = GameActivity.class.getSimpleName();
 
+    public void onPlayAgainButtonClicked(View v) {
+        JSONObject data = new JSONObject();
+        try {
+            data.put("action", "register players");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        sendMessage(data.toString());
+        goToFragment(new RegisterPlayerFragment(), null);
+    }
+
     public void onJoinButtonClicked(View v) {
         etPlayerName = (EditText) findViewById(R.id.etPlayerName);
         playerName = etPlayerName.getText().toString();
