@@ -1,5 +1,6 @@
 package com.colt.fibgame;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.transition.Visibility;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -42,8 +44,16 @@ public class GameActivity extends FragmentActivity {
 
     private String playerName = "";
     private boolean hasChosenAnswer = false;
+    private InputMethodManager imm;
 
     private static final String TAG = GameActivity.class.getSimpleName();
+
+    public void hideKeyboard() {
+        View focusedView = this.getCurrentFocus();
+        if (focusedView != null) {
+            imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
+        }
+    }
 
     public void onPlayAgainButtonClicked(View v) {
         JSONObject data = new JSONObject();
@@ -57,6 +67,8 @@ public class GameActivity extends FragmentActivity {
     }
 
     public void onJoinButtonClicked(View v) {
+        hideKeyboard();
+
         etPlayerName = (EditText) findViewById(R.id.etPlayerName);
         playerName = etPlayerName.getText().toString();
 
@@ -85,6 +97,8 @@ public class GameActivity extends FragmentActivity {
     }
 
     public void onSubmitLieButtonClicked(View v) {
+        hideKeyboard();
+
         etLie = (EditText) findViewById(R.id.etLie);
         String lie = etLie.getText().toString();
 
@@ -134,6 +148,7 @@ public class GameActivity extends FragmentActivity {
         if (hasChosenAnswer == true) {
             return;
         }
+
         ViewGroup answerGroup = (ViewGroup) getLayoutInflater().inflate(R.layout.choose_answer_fragment, (ViewGroup) findViewById(R.id.ll_answers_container));
         for (int i = 0; i < answerGroup.getChildCount(); i++) {
             View answer = answerGroup.getChildAt(i);
@@ -289,6 +304,7 @@ public class GameActivity extends FragmentActivity {
                         goToFragment(new EnterLieFragment(), questionArg);
                         break;
                     case "answers ready":
+                        hideKeyboard();
                         JSONArray jAnswers = data.getJSONArray("answers");
                         List<String> lAnswers = new ArrayList<String>();
                         for (int i = 0; i < jAnswers.length(); i++) {
@@ -332,6 +348,8 @@ public class GameActivity extends FragmentActivity {
         if (savedInstanceState != null) {
             return;
         }
+
+        imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 
         WelcomeFragment welcomeFragment = new WelcomeFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, welcomeFragment).commit();
