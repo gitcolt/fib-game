@@ -151,6 +151,9 @@ var fsm = StateMachine.create({
 
     // ON REVEAL
     onreveal: function() {
+      var lockInAnswersMessage = {"action": "lock in answers"}
+      window.messageBus.broadcast(JSON.stringify(lockInAnswersMessage));
+
       vm.answers[0].isRevealing = true;
       //transitioning after last answer is revealed instead
       /*

@@ -41,6 +41,7 @@ public class GameActivity extends FragmentActivity {
     private TextView tvCurrQuestion;
 
     private String playerName = "";
+    private boolean hasChosenAnswer = false;
 
     private static final String TAG = GameActivity.class.getSimpleName();
 
@@ -101,6 +102,7 @@ public class GameActivity extends FragmentActivity {
 
     public void onAnswerClicked(View v) {
         ViewGroup answerGroup = (ViewGroup) v.getParent();
+        hasChosenAnswer = true;
         int answerPos = -1;
         // Animate chosen answer
         // Default transition is to fade out views that are removed and then
@@ -126,6 +128,17 @@ public class GameActivity extends FragmentActivity {
         }
 
         sendMessage(data.toString());
+    }
+
+    public void lockInAnswers() {
+        if (hasChosenAnswer == true) {
+            return;
+        }
+        ViewGroup answerGroup = (ViewGroup) getLayoutInflater().inflate(R.layout.choose_answer_fragment, (ViewGroup) findViewById(R.id.ll_answers_container));
+        for (int i = 0; i < answerGroup.getChildCount(); i++) {
+            View answer = answerGroup.getChildAt(i);
+            answer.setVisibility(View.GONE);
+        }
     }
 
     private SessionManagerListener<CastSession> sessionManagerListener =
@@ -270,6 +283,7 @@ public class GameActivity extends FragmentActivity {
                 JSONObject data = new JSONObject(message);
                 switch (data.getString("action")) {
                     case "new question":
+                        hasChosenAnswer = false;
                         Bundle questionArg = new Bundle();
                         questionArg.putString("question", data.getString("question"));
                         goToFragment(new EnterLieFragment(), questionArg);
@@ -287,6 +301,9 @@ public class GameActivity extends FragmentActivity {
                         break;
                     case "show results":
                         goToFragment(new ResultsFragment(), null);
+                        break;
+                    case "lock in answers":
+                        lockInAnswers();
                         break;
                     default:
                         break;
