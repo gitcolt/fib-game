@@ -308,7 +308,8 @@ public class GameActivity extends FragmentActivity {
                         JSONArray jAnswers = data.getJSONArray("answers");
                         List<String> lAnswers = new ArrayList<String>();
                         for (int i = 0; i < jAnswers.length(); i++) {
-                            lAnswers.add(jAnswers.getJSONObject(i).getString("text"));
+                            if (!jAnswers.getJSONObject(i).getString("author").equals(playerName))
+                                lAnswers.add(jAnswers.getJSONObject(i).getString("text"));
                         }
                         String[] answers = lAnswers.toArray(new String[0]);
                         Bundle ansArg = new Bundle();
