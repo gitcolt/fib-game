@@ -50,7 +50,7 @@ window.messageBus.onMessage = function(event) {
       break;
     case "submit lie":
       vm.answers.push(
-        {text: data.lie, author: data.playerName, chosenBy: [], isCorrect: false, isRevealing: false, isShowingInfo: false}); 
+        {text: data.lie.toUpperCase(), author: data.playerName, chosenBy: [], isCorrect: false, isRevealing: false, isShowingInfo: false}); 
       break;
     case "choose answer":
       vm.answers[data.answerPos].chosenBy.push(data.chooser);

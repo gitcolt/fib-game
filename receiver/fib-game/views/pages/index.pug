@@ -22,7 +22,7 @@ html
             .answer-text.correct-answer(v-if="ans.isShowingInfo && ans.isCorrect") {{ ans.text }}
             .answer-text(v-else) {{ ans.text }}
             .answer-info(v-if="ans.isShowingInfo")
-              .answer-author(v-if="ans.isCorrect") The Truth! 
+              .answer-author(v-if="ans.isCorrect") The truth! 
               .answer-author(v-else) {{ ans.author }}'s lie
               .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy[0] }}
 

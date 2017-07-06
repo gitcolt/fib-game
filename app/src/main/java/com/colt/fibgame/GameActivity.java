@@ -70,7 +70,7 @@ public class GameActivity extends FragmentActivity {
         hideKeyboard();
 
         etPlayerName = (EditText) findViewById(R.id.etPlayerName);
-        playerName = etPlayerName.getText().toString();
+        playerName = etPlayerName.getText().toString().toUpperCase();
 
         JSONObject data = new JSONObject();
         try {
