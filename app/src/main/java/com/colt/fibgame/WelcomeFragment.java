@@ -1,12 +1,18 @@
 package com.colt.fibgame;
 
+import android.content.Context;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.MediaRouteButton;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.google.android.gms.cast.framework.CastButtonFactory;
 
@@ -26,4 +32,11 @@ public class WelcomeFragment extends Fragment {
 
         return view;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+
 }

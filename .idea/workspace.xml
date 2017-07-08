@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -3238,7 +3238,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" afterPath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <ignored path="FibCast.iws" />
@@ -3274,11 +3273,24 @@
       <file leaf-file-name="enter_lie_fragment.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="289">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
-                <element signature="e#1527#1551#0" expanded="true" />
+                <element signature="e#1889#1913#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="choose_answer_fragment.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -3299,8 +3311,8 @@
       <file leaf-file-name="EnterLieFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/EnterLieFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="339">
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="41" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -3308,84 +3320,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="77" column="47" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChooseAnswerFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChooseAnswerFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register_player_fragment.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/register_player_fragment.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="answer_template.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/answer_template.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="answer_button.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/answer_button.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="choose_answer_fragment.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WelcomeFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5253">
+              <caret line="358" column="58" selection-start-line="358" selection-start-column="58" selection-end-line="358" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome_fragment.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LieSubmittedFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/LieSubmittedFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadyToPlayFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ReadyToPlayFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -5242,33 +5240,33 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/game.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/first_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/FirstFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/MyFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/RegisterPlayer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/RegisterPlayerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/RegisterPlayerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ReadyToPlayFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/LieSubmittedFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/AnswerChosenFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/answer_chosen_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ResultsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/my_background.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/lie_submitted_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/ready_to_play_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/results_fragment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/answer_template.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/answer_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/register_player_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/EnterLieFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/EnterLieFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java" />
       </list>
     </option>
   </component>
@@ -5881,14 +5879,14 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.4914712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26972282" sideWeight="0.5055644" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31663114" sideWeight="0.18550107" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31663114" sideWeight="0.81449896" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45415777" sideWeight="0.19829424" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45415777" sideWeight="0.8017058" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -5953,7 +5951,7 @@
         <state relative-caret-position="153">
           <caret line="9" column="39" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="39" />
           <folding>
-            <element signature="e#1527#1551#0" expanded="true" />
+            <element signature="e#1889#1913#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -6034,7 +6032,7 @@
         <state relative-caret-position="153">
           <caret line="9" column="39" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="39" />
           <folding>
-            <element signature="e#1527#1551#0" expanded="true" />
+            <element signature="e#1889#1913#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -6096,7 +6094,7 @@
         <state relative-caret-position="153">
           <caret line="9" column="39" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="39" />
           <folding>
-            <element signature="e#1527#1551#0" expanded="true" />
+            <element signature="e#1889#1913#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -6187,16 +6185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/game.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -6207,41 +6195,13 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/LieSubmittedFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/answer_chosen_fragment.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/AnswerChosenFragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ReadyToPlayFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/my_background.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/background.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ResultsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -6281,17 +6241,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest">
         <state />
@@ -6309,17 +6258,6 @@
           <caret line="5" column="41" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
@@ -6349,37 +6287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/EnterLieFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="e#1527#1551#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/register_player_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -6391,6 +6298,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ResultsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/RegisterPlayerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -6399,13 +6314,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ReadyToPlayFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="77" column="47" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+        <state relative-caret-position="5253">
+          <caret line="358" column="58" selection-start-line="358" selection-start-column="58" selection-end-line="358" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/LieSubmittedFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/welcome_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/WelcomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding>
+            <element signature="e#1889#1913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/choose_answer_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/EnterLieFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
