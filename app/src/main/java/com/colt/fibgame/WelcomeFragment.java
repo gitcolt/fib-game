@@ -1,5 +1,6 @@
 package com.colt.fibgame;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
 
 import com.google.android.gms.cast.framework.CastButtonFactory;
 
@@ -36,7 +38,6 @@ public class WelcomeFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
     }
 
 }

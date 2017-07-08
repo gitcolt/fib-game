@@ -2,12 +2,15 @@ package com.colt.fibgame;
 
 
 import android.animation.ObjectAnimator;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -36,9 +39,13 @@ public class EnterLieFragment extends Fragment {
         String question = args.getString("question");
         tvCurrQuestion.setText(question);
 
-        timerBar.setPivotX(0);
-        ObjectAnimator animation = ObjectAnimator.ofFloat(timerBar, "scaleX", 0f);
-        animation.setDuration(4000);
-        animation.start();
+        // Get screen width
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point point=new Point();
+        display.getSize(point);
+        final int width = point.x;
+
+        // have to add ~30 pixels for some reason
+        timerBar.animate().x(-(width + 30)).setDuration(4000).setInterpolator(new LinearInterpolator());
     }
 }
