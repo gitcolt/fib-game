@@ -59,6 +59,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onSubmitLieButtonClicked"
+            android:background="@drawable/button_shape"
+            android:padding="10dp"
             android:text="SUBMIT"
             android:id="@+id/button4"
             app:layout_constraintBottom_toBottomOf="@+id/etLie"
