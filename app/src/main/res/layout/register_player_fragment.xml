@@ -41,6 +41,7 @@
             android:ems="10"
             android:hint="..."
             android:inputType="text"
+            android:maxLength="10"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"

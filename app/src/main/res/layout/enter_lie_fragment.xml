@@ -47,6 +47,7 @@
             android:ems="10"
             android:inputType="text"
             android:hint="@string/enter_lie_hint"
+            android:maxLength="28"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/button4"
