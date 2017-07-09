@@ -24,7 +24,7 @@ html
             .answer-info(v-if="ans.isShowingInfo")
               .answer-author(v-if="ans.isCorrect") The truth! 
               .answer-author(v-else) {{ ans.author }}'s lie
-              .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy[0] }}
+              .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy.toString() }}
 
       .screen#results-container(@click="startGame" style="display:none")
         h1(v-for="player in players") {{ player.name }} {{ player.score }} 
