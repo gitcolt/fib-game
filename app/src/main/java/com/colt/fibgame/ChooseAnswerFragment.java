@@ -36,12 +36,17 @@ public class ChooseAnswerFragment extends Fragment {
 
         Bundle args = getArguments();
         String[] answers = args.getStringArray("answers");
+        int answerPosToHide = args.getInt("answerPosToHide");
 
         LinearLayout ll = (LinearLayout) getActivity().findViewById(R.id.ll_answers_container);
         for (int i = 0; i < answers.length; i++) {
             Button bAnswer = (Button) View.inflate(getContext(), R.layout.answer_template, null);
             bAnswer.setText(answers[i]);
             bAnswer.setId(View.generateViewId());
+            // Hide the players own lie so they can't choose it
+            if(i == answerPosToHide) {
+                bAnswer.setVisibility(View.GONE);
+            }
             ll.addView(bAnswer);
         }
 

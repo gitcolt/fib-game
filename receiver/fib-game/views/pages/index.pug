@@ -27,7 +27,9 @@ html
               .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy.toString() }}
 
       .screen#results-container(@click="startGame" style="display:none")
-        h1(v-for="player in players") {{ player.name }} {{ player.score }} 
+        #winner-container
+          h1 Winner
+          h1(v-for="player in winners") {{ player.name }}
 
       //h3#debug {{ debugMsg }}
 

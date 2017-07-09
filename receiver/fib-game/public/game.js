@@ -29,6 +29,7 @@ var vm = new Vue({
     currQuestion: '',
     answers: [],
     players: [],
+    winners: [],
     answersReady: false,
     revealAnim: 'shake',
     isShowingScores: false
@@ -146,6 +147,16 @@ var fsm = StateMachine.create({
     onshowResults: function() {
       var showResultsMessage = {"action": "show results"}
       window.messageBus.broadcast(JSON.stringify(showResultsMessage));
+      // Calculate winner(s)
+      vm.winners = [];
+      var topScore = vm.players[0].score;
+      for (let i = 0; i < vm.players.length; i++) {
+        let p = vm.players[i];
+        if (p.score == topScore) {
+          vm.winners.push(p);
+        }
+      }
+
       goToGameScreen("results");
     },
 

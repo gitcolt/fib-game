@@ -126,6 +126,7 @@ public class GameActivity extends FragmentActivity {
 
         for (int i = 0; i < answerGroup.getChildCount(); i++) {
             View answer = answerGroup.getChildAt(i);
+            answer.setEnabled(false);
             if (answer.getId() != v.getId()) {
                 answer.setVisibility(View.GONE);
             } else {
@@ -308,13 +309,17 @@ public class GameActivity extends FragmentActivity {
                         hideKeyboard();
                         JSONArray jAnswers = data.getJSONArray("answers");
                         List<String> lAnswers = new ArrayList<String>();
+                        int answerPosToHide = -1;
                         for (int i = 0; i < jAnswers.length(); i++) {
-                            if (!jAnswers.getJSONObject(i).getString("author").equals(playerName))
-                                lAnswers.add(jAnswers.getJSONObject(i).getString("text"));
+                            if (jAnswers.getJSONObject(i).getString("author").equals(playerName)) {
+                                answerPosToHide = i;
+                            }
+                            lAnswers.add(jAnswers.getJSONObject(i).getString("text"));
                         }
                         String[] answers = lAnswers.toArray(new String[0]);
                         Bundle ansArg = new Bundle();
                         ansArg.putStringArray("answers", answers);
+                        ansArg.putInt("answerPosToHide", answerPosToHide);
                         goToFragment(new ChooseAnswerFragment(), ansArg);
                         break;
                     case "show results":
