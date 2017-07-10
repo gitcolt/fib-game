@@ -67,6 +67,12 @@ body {
   border-color: white;
 }
 
+.score:nth-child(6) {
+  background: #ff6464;
+  border-left: solid 7px;
+  border-color: white;
+}
+
 #answers-container {
   display: inline-flex;
   position: absolute;

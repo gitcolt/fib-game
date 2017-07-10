@@ -3240,7 +3240,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" afterPath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <ignored path="FibCast.iws" />
@@ -5544,7 +5543,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="C:/Program Files (x86)/Android/android-sdk" />
-    <property name="device.picker.selection" value="Galaxy_Nexus_API_25 192.168.2.3:5555" />
+    <property name="device.picker.selection" value="192.168.2.3:5555" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
