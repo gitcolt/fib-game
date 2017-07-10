@@ -85,7 +85,8 @@ body {
   margin: 50px;
   font-size: 2em;
   padding: 12px;
-  background: #034f84;
+  //background: #034f84;
+  background: #12635E;
   border: solid white;
   border-radius: 10px;
   color: white;
@@ -106,18 +107,18 @@ body {
   white-space: nowrap;
   display: block;
   float: left;
-  border-radius: 5px;
+  border-radius: 10px 10px 10px 0px;
   padding: 5px;
-  background: gray;
+  background: #ff8C0F;
 }
 
 .answer-chosen-by {
   white-space: nowrap;
   display: block;
   float: left;
-  border-radius: 5px;
+  border-radius: 0px 10px 10px 10px;
   padding: 5px;
-  background: #775849;
+  background: #404040;
 }
 
 #title {

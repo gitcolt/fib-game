@@ -120,10 +120,10 @@ var fsm = StateMachine.create({
         vm.currQuestion = res.question;
         // Push computer's true answer
         vm.answers.push(
-          {text: res.answer,  author: "comp", chosenBy: [], isCorrect: true,  isRevealing: false, isShowingInfo: false});
+          {text: res.answer,  author: "COMP", chosenBy: [], isCorrect: true,  isRevealing: false, isShowingInfo: false});
         // Push computer's lie
         vm.answers.push(
-          {text: res.lie,     author: "comp", chosenBy: [], isCorrect: false, isRevealing: false, isShowingInfo: false});
+          {text: res.lie,     author: "COMP", chosenBy: [], isCorrect: false, isRevealing: false, isShowingInfo: false});
 
         fsm.acceptLies();
       });
@@ -177,7 +177,7 @@ var fsm = StateMachine.create({
     // ON REGISTERING PLAYERS
     onregisteringPlayers: function() {
       //replace with real chromecast messages
-      // Don't allow players to use "comp" as a name
+      // Don't allow players to use "COMP" as a name
 
       //simulatedPlayersJoining();
     },
@@ -198,7 +198,7 @@ var fsm = StateMachine.create({
               window.messageBus.send(choosers[i].id, JSON.stringify(correctAnswerMessage));
             }
             // Award 500 points to each player the author successfully fooled
-          } else if (!answer.isCorrect && answer.author != "comp") {
+          } else if (!answer.isCorrect && answer.author != "COMP") {
             var author = getAuthorOf(answer);
             for (let i = 0; i < answer.chosenBy.length; i++) {
               author.score += 500;
