@@ -13,18 +13,23 @@ html
       scores-slideout(:players="players" :is-showing-scores="isShowingScores")
       //h3 round {{ round }}
       .screen#joining-container(@click="startGame" style="display:none")
-        h1#player(v-for="player in players") {{ player.name }}
+        //#title FIBCAST
+        h1#players Players:  
+         .player(v-for="player in players") {{ player.name }}
 
       .screen#main-container(@click="cont" style="display:none")
         h1#question {{ currQuestion }}
         #answers-container(v-if="answersReady")
           .answer(v-for="(ans, index) in answers" :class="ans.isRevealing ? revealAnim : ''" @animationend="reveal(index + 1)")
+            .score-addition(v-if="ans.isShowingInfo && ans.isCorrect && ans.chosenBy.length > 0") +1000
+            .score-addition(v-else-if="ans.isShowingInfo && !ans.isCorrect && ans.chosenBy.length > 0") +{{ ans.chosenBy.length*500 }}
             .answer-text.correct-answer(v-if="ans.isShowingInfo && ans.isCorrect") {{ ans.text }}
             .answer-text(v-else) {{ ans.text }}
             .answer-info(v-if="ans.isShowingInfo")
               .answer-author(v-if="ans.isCorrect") The truth! 
               .answer-author(v-else) {{ ans.author }}'s lie
-              .answer-chosen-by(v-if="ans.chosenBy.length > 0") chosen by {{ ans.chosenBy.toString() }}
+              .answer-chosen-by(v-if="ans.chosenBy.length > 0 && !ans.isCorrect") fooled {{ ans.chosenBy.toString() }}
+              .answer-chosen-by(v-else-if="ans.chosenBy.length > 0 && ans.isCorrect") chosen by {{ ans.chosenBy.toString() }}
 
       .screen#results-container(@click="startGame" style="display:none")
         #winner-container

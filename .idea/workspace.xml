@@ -3299,8 +3299,8 @@
       <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="314" column="52" selection-start-line="314" selection-start-column="52" selection-end-line="314" selection-end-column="52" />
+            <state relative-caret-position="3219">
+              <caret line="316" column="86" selection-start-line="316" selection-start-column="86" selection-end-line="316" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -5547,7 +5547,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.sdk.path" value="C:/Program Files (x86)/Android/android-sdk" />
-    <property name="device.picker.selection" value="192.168.2.3:5555" />
+    <property name="device.picker.selection" value="Galaxy_Nexus_API_25 192.168.2.3:5555" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -6392,8 +6392,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="314" column="52" selection-start-line="314" selection-start-column="52" selection-end-line="314" selection-end-column="52" />
+        <state relative-caret-position="3219">
+          <caret line="316" column="86" selection-start-line="316" selection-start-column="86" selection-end-line="316" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
