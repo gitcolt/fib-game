@@ -13,8 +13,9 @@ html
       scores-slideout(:players="players" :is-showing-scores="isShowingScores")
       //h3 round {{ round }}
       .screen#joining-container(@click="startGame" style="display:none")
-        //#title FIBCAST
-        h1#players Players:  
+        #title FIBCAST
+        img#fibfingers(src="https://image.ibb.co/geXQZa/fibfingers.png")
+        h1#players
          .player(v-for="player in players") {{ player.name }}
 
       .screen#main-container(@click="cont" style="display:none")

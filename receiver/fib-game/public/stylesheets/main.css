@@ -127,20 +127,50 @@ body {
   background: #404040;
 }
 
+#joining-container {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
 #title {
-  margin-top: 100px;
-  font-size: 4em;
+  position: absolute;
+  top: 10vh;
+  display: flex;
+  justify-content: center;
+  padding: 0px 30px 0px 30px;
+  color: #ff8c0f;
+  font-size: 4.5em;
   font-family: 'Abril Fatface', cursive;
-  color: #FFDC00;
+  background: white;
+  border-width: 8px 8px 8px 8px;
+  border-radius: 70px 70px 70px 70px;
+  border-style: solid;
+  border-color: #12635e;
+}
+
+#fibfingers {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 30vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-width: 8px 8px 8px 8px;
+  border-radius: 50px 50px 50px 0px;
+  border-style: solid;
 }
 
 #players {
-  //margin-left: 40px;
-  //margin-right: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  align-self: flex-end;
+  margin-bottom: 100px;
 }
 
 .player {
