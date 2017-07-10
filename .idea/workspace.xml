@@ -3240,7 +3240,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/state-machine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/receiver/fib-game/public/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" afterPath="$PROJECT_DIR$/receiver/fib-game/public/vue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" afterPath="$PROJECT_DIR$/receiver/fib-game/views/pages/index.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <ignored path="FibCast.iws" />
@@ -3296,11 +3295,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
+            <state relative-caret-position="346">
+              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -3308,7 +3307,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -5276,8 +5275,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/register_player_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/enter_lie_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java" />
       </list>
     </option>
   </component>
@@ -6371,6 +6370,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/ChooseAnswerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -6381,19 +6388,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/colt/fibgame/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
+        <state relative-caret-position="346">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

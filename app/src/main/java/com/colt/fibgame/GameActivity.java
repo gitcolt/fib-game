@@ -49,6 +49,11 @@ public class GameActivity extends FragmentActivity {
 
     private static final String TAG = GameActivity.class.getSimpleName();
 
+    @Override
+    public void onBackPressed() {
+        // Disable back button for now
+    }
+
     public void hideKeyboard() {
         View focusedView = this.getCurrentFocus();
         if (focusedView != null) {
