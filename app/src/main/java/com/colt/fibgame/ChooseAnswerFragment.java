@@ -57,7 +57,7 @@ public class ChooseAnswerFragment extends Fragment {
         final int width = point.x;
 
         // have to add ~30 pixels for some reason
-        timerBar.animate().x(-(width + 30)).setDuration(4000).setInterpolator(new LinearInterpolator());
+        timerBar.animate().x(-(width + 30)).setDuration(30000).setInterpolator(new LinearInterpolator());
 
     }
 }

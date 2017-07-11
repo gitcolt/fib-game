@@ -108,7 +108,7 @@ var fsm = StateMachine.create({
         //vm.answers[1].chosenBy.push(vm.players[0].name);
         //vm.answers[2].chosenBy.push(vm.players[1].name);
         fsm.reveal();
-      }, 4000); // Wait 4 seconds for players to choose answers
+      }, 30000); // Wait 30 seconds for players to choose answers
     },
 
     // ON NEW QUESTION
@@ -140,7 +140,7 @@ var fsm = StateMachine.create({
           {text: "giggle", author: vm.players[1].name, chosenBy: [], isCorrect: false, isRevealing: false});
         */
         fsm.acceptAnswers();
-      }, 4000); // Wait 4 seconds for all lies to be entered
+      }, 30000); // Wait 30 seconds for all lies to be entered
     },
 
     // ON SHOW RESULTS

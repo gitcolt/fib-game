@@ -43,6 +43,7 @@ html
       transition(name="slide")
         .scores-slideout(v-if="isShowingScores")
           ul#scores
-            li.score(v-for="player in players") {{ player.name }}: {{ player.score }}
+            li.score(v-for="player in players") {{ player.name }}: 
+              .score-span {{ player.score }}
     script(src='/game.js')
     script(src='/receiver.js')

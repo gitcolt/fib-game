@@ -1,5 +1,4 @@
 body {
-  //background-color: lightblue;
   background-color: #b24542;
 }
 
@@ -163,7 +162,7 @@ body {
   align-content: center;
   align-items: center;
   border-width: 8px 8px 8px 8px;
-  border-radius: 50px 50px 50px 0px;
+  border-radius: 50px 0px 50px 0px;
   border-style: solid;
 }
 
@@ -210,11 +209,16 @@ body {
 .scores-slideout {
   position: relative;
   float: right;
-  width: 45vw;
+  width: 50vw;
   height: 100vh;
   padding 30px;
   transform: translateX(0);
   z-index: 999;
+}
+
+.score-span {
+  float: right;
+  margin-right: 25px;
 }
 
 .slide-enter-active, .slide-leave-active {
@@ -240,7 +244,7 @@ body {
 }
 
 .shake {
-  animation: shake_anim 3s linear forwards;
+  animation: shake_anim 2.5s linear forwards;
 }
 
 @keyframes shake_anim {

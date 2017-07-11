@@ -6,18 +6,18 @@
             <item>
                 <shape>
                     <corners
-                        android:topLeftRadius="20dp"
-                        android:bottomRightRadius="20dp"
-                        android:topRightRadius="20dp"/>
+                        android:topLeftRadius="10dp"
+                        android:bottomRightRadius="10dp"
+                        android:topRightRadius="10dp"/>
                     <solid android:color="@color/shadow"/>
                 </shape>
             </item>
             <item android:bottom="5dp">
                 <shape>
                     <corners
-                        android:topLeftRadius="20dp"
-                        android:bottomRightRadius="20dp"
-                        android:topRightRadius="20dp"/>
+                        android:topLeftRadius="10dp"
+                        android:bottomRightRadius="10dp"
+                        android:topRightRadius="10dp"/>
                     <solid android:color="@color/white" />
 
                 </shape>
