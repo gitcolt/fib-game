@@ -44,7 +44,9 @@ var vm = new Vue({
       this.answers[ansPos - 1].isShowingInfo = true;
       if (ansPos >= this.answers.length) {
         // Transition to updateScores when all answers have been revealed
-        fsm.updateScores(); 
+        setTimeout(function() {
+          fsm.updateScores(); 
+        }, 2500); 
       } else {
         this.answers[ansPos].isRevealing = true;
       }

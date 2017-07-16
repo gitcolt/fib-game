@@ -3,9 +3,11 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="backgroundColor">#b24542</color>
-    <color name="answerColor">#12635E</color>
+    <color name="backgroundColor">#ff6464</color>
+    <color name="answerColor">#588c7e</color>
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFDC00</color>
     <color name="shadow">#8b000000</color>
 </resources>
+
+<!--previous bg color: FF6464 -->

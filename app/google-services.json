@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "878786307584",
+    "firebase_url": "https://fibcast-3cf72.firebaseio.com",
+    "project_id": "fibcast-3cf72",
+    "storage_bucket": "fibcast-3cf72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878786307584:android:531cf6e727113f63",
+        "android_client_info": {
+          "package_name": "com.colt.fibgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878786307584-6hghfajhhuu5fmrn894mpnp935oub193.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkxz_I3GIWZjD6l8yogRzwoak44Dn1LhY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
