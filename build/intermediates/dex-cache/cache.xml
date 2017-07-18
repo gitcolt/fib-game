@@ -3,57 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="5b7db42770f8679218167d0c46ba8fe33fc0590e">
-        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9b2370f2247c8a7332a95cb6fa73b258305ecf97\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Colt\.android\build-cache\c77e09410622ec22aa8f7f9c24477cdc0482ebe8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="a440fb3fec30ff925e9f601cc458fb6671834cb2">
-        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\pre-dexed\debug\classes_81030016c35ae01a34614904f31b3360f86d9d1c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Colt\.android\build-cache\28cc22d22c0d3ae3831d13e405705ebd3e796b53\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3b7173b3df4c7029699919414400041f64519e34">
-        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\pre-dexed\debug\classes_e65f619fd230340bf5e87fa1fa5efa4155bd1d13.jar" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3250a7aa8b93089a7d5bdeb131636ee754292c7a\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Colt\.android\build-cache\a6e2cf39dc5c8a3ff87b02361916bd0e724bcfb8\output\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="88848548ab56d4fbf3d2d1b0c85bf1ff9b4c1f4b">
-        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\pre-dexed\debug\classes_165b1b1491dc8281e0d750259075513b3cac825a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Colt\.android\build-cache\637cd6e504965d689e42c6f91d17c0ea3a23987b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="18b5697c65c4fe5b7381613b8b8ae9ac52e26fa7">
-        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\pre-dexed\debug\classes_42f7eca8eb56ee58271a42692ce23b92fec845e9.jar" />
+        sha1="0506ee785d6793868ca8f7c2eb651e6410b4b315">
+        <dex dex="C:\Users\Colt\AndroidStudioProjects\FibCast\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9b2370f2247c8a7332a95cb6fa73b258305ecf97\classes.dex" />
     </item>
 
 </items>
